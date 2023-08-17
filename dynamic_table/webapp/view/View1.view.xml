@@ -1,0 +1,114 @@
+<mvc:View
+    xmlns:form="sap.ui.layout.form"
+    xmlns:cards="sap.f.cards"
+    xmlns:table="sap.m.table"
+    xmlns:layout="sap.ui.layout"
+    controllerName="dynamictable.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                id="table"
+                
+                mode="SingleSelect"
+                growing="true"
+                sticky="ColumnHeaders,HeaderToolbar"
+                items="{
+          path: '/myArray',
+          templateShareable: false,
+          key: 'Product'
+          }"
+            >
+                <headerToolbar>
+                    <Toolbar>
+                        <Label text="Product Details" />
+                        <Label
+                            id="text2"
+                            text="0"
+                        />
+                        <ToolbarSpacer />
+                        <SearchField search="onSearch" width="17.5rem"/>
+                        <Button
+                            id="settings"
+                            icon="sap-icon://action-settings"
+                            press="onTableSettings"
+                        />
+                       <!-- <Button
+                            id="filter"
+                            icon="sap-icon://clinical-order"
+                            press="handleFilterButtonPressed"
+                        />-->
+                        <!--<Text
+                            text="{
+            path:'/myArray',
+            formatter: '.formatter.totalFormatter'
+          }"
+                        />
+                        <ToolbarSpacer />
+                        <Button
+                            id="add"
+                            text="Add"
+                            press="OnOpen"
+                        />
+                        <Button
+                            id="delete"
+                            text="Delete"
+                            press="OnDelete"
+                        />
+                        <Button
+                            id="settings"
+                            text="settings"
+                            press="onTableSettings"
+                        />-->
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column id="co1">
+                        <Text text="Product" />
+                    </Column>
+                    <Column id="co2">
+                        <Text text="Price" />
+                    </Column>
+                </columns>
+                <ColumnListItem type="Navigation" press="ListItem" >
+                    <Text text="{Product}" />
+                    <ObjectNumber
+                        number="{Price}"
+                        state="{
+				path: 'Price',
+				formatter: '.formatter.colourState'
+				}"
+                    />
+                    <!--<Text text="{Price}"></Text>-->
+                </ColumnListItem>
+            </Table>
+        </content>
+        <footer>
+            <OverflowToolbar>
+            <ToolbarSpacer ></ToolbarSpacer>
+                <Button
+                    id="add"
+                    text="Add"
+                    press="OnOpen"
+                />
+                <Button
+                    id="delete"
+                    text="Delete"
+                    press="OnDelete"
+                />
+                <!--<Button
+                    id="settings"
+                    text="settings"
+                    press="onTableSettings"
+                />-->
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

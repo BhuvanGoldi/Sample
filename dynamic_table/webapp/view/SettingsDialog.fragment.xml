@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+  <ViewSettingsDialog confirm="onConfirm">
+    <sortItems>
+      <ViewSettingsItem selected="true" key="Price" text="Price"/>
+    </sortItems>
+    <groupItems>
+      <ViewSettingsItem key="Product" text="Product"/>
+    </groupItems>
+    <filterItems>
+      <ViewSettingsFilterItem key="Price" text="Price" multiSelect="false">
+        <items>
+          <ViewSettingsItem key="Price___GT___25___X" text="Greater than 25"/>
+        </items>
+      </ViewSettingsFilterItem>
+    </filterItems>
+  </ViewSettingsDialog>
+</core:FragmentDefinition>

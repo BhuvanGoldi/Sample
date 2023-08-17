@@ -1,0 +1,36 @@
+<mvc:View xmlns:table="sap.ui.mdc.table" xmlns:layout="sap.ui.layout" controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <layout:VerticalLayout id="V1">
+        <layout:VerticalLayout id="V2" >
+            <Label id = "product" text="product"></Label>
+            <Input id="sProduct" placeholder="Enter the product"></Input>
+            <Label id="price" text="Price"></Label>
+            <Input id="sPrice" placeholder="Enter the Price"></Input>
+            <Button id="save" text="Save" press="OnSave"></Button>
+        </layout:VerticalLayout>  
+        <Table id="table" 
+        items="{/Productdetails}">
+            <columns>
+                <Column id="co1">
+                <Text text="Product"></Text>
+                </Column>
+                <Column id="co2">
+                <Text text="Price"></Text>
+                </Column>
+            </columns>
+        <items>
+        <ColumnListItem >
+        <cells>
+        <Text text="{Product}"></Text>
+        <Text text="{Price}"></Text>
+        </cells>
+        </ColumnListItem>
+        </items>
+        </Table>
+        </layout:VerticalLayout>    
+        </content>
+    </Page>
+</mvc:View>
