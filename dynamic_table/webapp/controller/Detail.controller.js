@@ -6,14 +6,18 @@ sap.ui.define([
 
 	return Controller.extend("sap.m.TableScrollToIndex.controller.Detail", {
 		onInit: function () {
-			this.oRouter = this.getOwnerComponent().getRouter();
-			this.oModel = this.getOwnerComponent().getModel();
+			var oRouter = this.getOwnerComponent().getRouter();
+			oRouter.getRoute("detail").attachPatternMatched(this._onProductMatched, this);
+			var oModel = new JSONModel({
+				"Price":"",
+				"ProductName":""
+			});
+			this.getView().setModel(oModel,"Product");
 
-			this.oRouter.getRoute("detail").attachPatternMatched(this._onProductMatched, this);
 		},
-		handleFullScreen: function () {
+		/*handleFullScreen: function () {
 			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/midColumn/fullScreen");
-			this.oRouter.navTo("detail", {layout: sNextLayout, product: this._product});
+			this.oRouter.navTo("detail", {product: this._product});
 		},
 		handleExitFullScreen: function () {
 			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/midColumn/exitFullScreen");
@@ -22,14 +26,22 @@ sap.ui.define([
 		handleClose: function () {
 			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/midColumn/closeColumn");
 			this.oRouter.navTo("view", {layout: sNextLayout});
-		},
+		},*/
 		_onProductMatched: function (oEvent) {
-			this._product = oEvent.getParameter("arguments").product || this._product || "0";
-            omodel = this.getView().byId("table").getModel();
+			/*this._product = oEvent.getParameter("arguments").product || this._product || "0";
+            var omodel = sap.ui.getCore().getModel();
 			this.getView().bindElement({
 				path: "/myArray/" + this._product,
-                model: "omodel"
+                model: omodel
 			});
+			this.getView().bindElement({
+				path: "/" + window.encodeURIComponent(oEvent.getParameter("arguments").product),
+                model: "newModel"
+			});*/
+			var price = oEvent.getParameter("arguments").product;
+			var product = oEvent.getParameter("arguments").productname;
+			this.getView().getModel("Product").setProperty("/Price",price);
+			this.getView().getModel("Product").setProperty("/ProductName",product);
 		}
 	});
 });

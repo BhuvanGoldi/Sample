@@ -24,8 +24,18 @@ sap.ui.define([
                 };
                 var oModel = new sap.ui.model.json.JSONModel();
                 oModel.setData(oData);
+                sap.ui.getCore().setModel(oModel);
                 var oTable = this.getView().byId("table");
                 oTable.setModel(oModel);
+                
+            },
+            ListItem: function (oEvent) {
+                var productPath = oEvent.getSource().getBindingContext();
+                var oRouter = this.getOwnerComponent().getRouter();  
+                oRouter.navTo("detail", {
+                    product: window.encodeURIComponent(productPath.getProperty("Price")),
+                    productname: window.encodeURIComponent(productPath.getProperty("Product"))
+                });
             },
             onSearch: function (oEvent) {
                 var oTableSearchState = [],
@@ -67,7 +77,7 @@ sap.ui.define([
                 if (len > 0) {
                     oTable.setProperty("mode", "MultiSelect");
                 }
-                this.getView().byId("text2").setText(len);
+                this.getView().byId("text3").setText(len);
 
             },
 
@@ -96,7 +106,7 @@ sap.ui.define([
                 if (len < 1) {
                     oTable.setProperty("mode", "SingleSelect");
                 }
-                this.getView().byId("text2").setText(len);
+                this.getView().byId("text3").setText(len);
 
             },
             getCounty: function (oContext) {

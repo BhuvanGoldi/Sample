@@ -1,0 +1,53 @@
+{
+    "ProductCollection": [
+        {
+            "Category": "Laptops",
+            "MainCategory": "Computer Systems",
+            "Description": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+            "Name": "Notebook Basic 15",
+            "Price": 956
+        },
+        {
+            "Category": "Laptops",
+            "MainCategory": "Computer Systems",
+            "Description": "Notebook Basic 17 with 2,80 GHz quad core, 17\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro",
+            "Name": "Notebook Basic 17",
+            "Price": 1249
+        },
+        {
+            "Category": "Laptops",
+            "MainCategory": "Computer Systems",
+            "Description": "Notebook Basic 18 with 2,80 GHz quad core, 18\" LCD, 8 GB DDR3 RAM, 1000 GB Hard Disc, Windows 8 Pro",
+            "Name": "Notebook Basic 18",
+            "Price": 1570
+        },
+        {
+            "Category": "Laptops",
+            "MainCategory": "Computer Systems",
+            "Description": "Notebook Basic 19 with 2,80 GHz quad core, 19\" LCD, 8 GB DDR3 RAM, 1000 GB Hard Disc, Windows 8 Pro",
+            "Name": "Notebook Basic 19",
+            "Price": 1650
+        },
+        {
+            "Category": "Accessories",
+            "MainCategory": "Computer Components",
+            "Description": "Digital Organizer with State-of-the-Art Storage Encryption",
+            "Name": "ITelO Vault",
+            "Price": 299
+        },
+        {
+            "Category": "Accessories",
+            "MainCategory": "Computer Systems",
+            "Description": "Notebook Professional 15 with 2,80 GHz quad core, 15\" Multitouch LCD, 8 GB DDR3 RAM, 500 GB SSD - DVD-Writer (DVD-R/+R/-RW/-RAM),Windows 8 Pro",
+            "Name": "Notebook Professional 15",
+            "Price": 1999            
+        },
+        {
+            "Category": "Laptops",
+            "MainCategory": "Computer Systems",
+            "Description": "Notebook Professional 17 with 2,80 GHz quad core, 17\" Multitouch LCD, 8 GB DDR3 RAM, 500 GB SSD - DVD-Writer (DVD-R/+R/-RW/-RAM),Windows 8 Pro",
+            "Name": "Notebook Professional 17",
+            "Price": 2299
+        }
+    ]
+}

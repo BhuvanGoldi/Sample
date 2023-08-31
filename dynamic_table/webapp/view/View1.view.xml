@@ -29,7 +29,7 @@
                     <Toolbar>
                         <Label text="Product Details" />
                         <Label
-                            id="text2"
+                            id="text3"
                             text="0"
                         />
                         <ToolbarSpacer />

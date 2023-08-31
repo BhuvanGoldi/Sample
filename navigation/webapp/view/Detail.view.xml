@@ -1,11 +1,12 @@
-<mvc:View displayBlock="true" controllerName="dynamictable.controller.Detail" height="100%"
+<mvc:View displayBlock="true" controllerName="navigation.controller.Detail" height="100%"
 		xmlns="sap.uxap"
 		xmlns:mvc="sap.ui.core.mvc"
 		xmlns:m="sap.m"
+		xmlns:f="sap.f"
 		xmlns:form="sap.ui.layout.form">
 
 	<ObjectPageLayout id="ObjectPageLayout"
-					showTitleInHeaderContent="true"
+					 showTitleInHeaderContent="true"
 					alwaysShowContentHeader="false"
 					preserveHeaderStateOnScroll="false"
 					headerContentPinnable="true"
@@ -14,24 +15,17 @@
 				<headerTitle>
 					<ObjectPageDynamicHeaderTitle>
 						<expandedHeading>
-							<m:Title text="{Product>/ProductName}" wrapping="true" class="sapUiSmallMarginEnd"/>
+							<m:Title text="{products>Name}" wrapping="true" class="sapUiSmallMarginEnd"/>
 						</expandedHeading>
 
 						<snappedHeading>
 							<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Center">
 								<m:FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
 									<m:Avatar src="sap-icon://accelerated" displaySize="S" displayShape="Square"/>
-									<m:Title text="products>Name" wrapping="true" class="sapUiTinyMarginEnd"/>
+									<m:Title text="{products>Name}" wrapping="true" class="sapUiTinyMarginEnd"/>
 								</m:FlexBox>
 							</m:FlexBox>
 						</snappedHeading>
-
-						<!--<navigationActions>
-							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="handleFullScreen" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/fullScreen} !== null }"/>
-							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/midColumn/exitFullScreen} !== null }"/>
-							<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose"  tooltip="Close column" visible="{= ${/actionButtonsInfo/midColumn/closeColumn} !== null }"/>
-						</navigationActions>-->
-
 					</ObjectPageDynamicHeaderTitle>
 				</headerTitle>
 
@@ -44,16 +38,15 @@
 						</m:Avatar>
 						<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
 							<m:Label text="Main Category"/>
-							<m:Text text="products>MainCategory"/>
+							<m:Text text="{products>MainCategory}"/>
 						</m:VBox>
 						<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
 							<m:Label text="Subcategory"/>
-							<m:Text text="products>Category"/>
+							<m:Text text="{products>Category}"/>
 						</m:VBox>
 						<m:VBox justifyContent="Center" class="sapUiSmallMarginEnd">
 							<m:Label text="Price"/>
-							<m:Text text="{Product>/Price}"/>
-							<!--<m:Label id="Price" emphasized="false"/>-->
+							<m:ObjectNumber number="{products>Price}" emphasized="false"/>
 						</m:VBox>
 					</m:FlexBox>
 				</headerContent>
@@ -74,14 +67,12 @@
 								columnsL="1"
 								columnsM="1">
 								<form:content>
-									<m:Label text="Product Name"/>
-									<!--<m:Label id="Product" text=" "/>-->
-									<m:Text text="{Product>/ProductName}"/>
+									<m:Label text="Product ID"/>
+									<m:Text text="ABC"/>
 									<m:Label text="Description"/>
-									<m:Text text="Description"/>
-									<m:Label text="Price"/>
-									<m:Text text="{Product>/Price}"/>
-									<!--<m:Label id="Price1" text=" "/>-->
+									<m:Text text="{products>Description}"/>
+									<m:Label text="Supplier"/>
+									<m:Text text="{products>SupplierName}"/>
 								</form:content>
 							</form:SimpleForm>
 						</blocks>
