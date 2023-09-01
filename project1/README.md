@@ -1,4 +1,4 @@
-## Application Details New 
+## Application Details New trial account
 |               |
 | ------------- |
 |**Generation Date and Time**<br>Fri Jul 14 2023 07:41:16 GMT+0000 (Coordinated Universal Time)|
